@@ -46,11 +46,13 @@ async def main_menu(message):
 
 @dp.callback_query_handler(text='formulas')
 async def get_formulas(call):
+    await call.answer()
     await call.message.answer('10 х вес(кг) + 6,25 х рост(см) - 5 х возраст(г) + 5')
 
 
 @dp.callback_query_handler(text='calories')
 async def set_age(call):
+    await call.answer()
     await call.message.answer('Введите свой возраст: ')
     await UserState.age.set()
 
